@@ -1,3 +1,12 @@
 [submodule "rinari"]
 	path = vendor/rinari
 	url = git://github.com/eschulte/rinari.git
+[submodule "emacs-js2-mode"]
+	path = vendor/emacs-js2-mode
+	url = git://github.com/adolfosousa/emacs-js2-mode.git
+[submodule "haml-mode"]
+	path = vendor/haml-mode
+	url = git://github.com/nex3/haml-mode.git
+[submodule "sass-mode"]
+	path = vendor/sass-mode
+	url = git://github.com/nex3/sass-mode.git
