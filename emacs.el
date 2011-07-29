@@ -46,4 +46,7 @@ it's loaded for files matching REGEXP."
 (yas/load-directory "~/.emacs.d/vendor/yasnippet-0.6.1c/snippets")
 (yas/load-directory "~/.emacs.d/yasnippets")
 
+(setq rspec-use-rake-flag nil)
+(setq rspec-spec-command "rspec")
 (setq rinari-tags-file-name "TAGS")
+
