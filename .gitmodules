@@ -13,3 +13,9 @@
 [submodule "cucumber.el"]
 	path = vendor/cucumber.el
 	url = git://github.com/michaelklishin/cucumber.el.git
+[submodule "yasnippets-rails"]
+	path = yasnippets/yasnippets-rails
+	url = git://github.com/eschulte/yasnippets-rails.git
+[submodule "yasnippets-jquery"]
+	path = yasnippets/yasnippets-jquery
+	url = git://github.com/jpablobr/yasnippets-jquery.git
