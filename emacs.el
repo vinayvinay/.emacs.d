@@ -13,6 +13,7 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/cucumber.el")
 (add-to-list 'load-path "~/.emacs.d/vendor/magit")
 (add-to-list 'load-path "~/.emacs.d/vendor/yasnippet-0.6.1c")
+(add-to-list 'load-path "~/.emacs.d/vendor/rspec-mode")
 
 (autoload 'js2-mode "js2" nil t)
 (autoload 'magit-status "magit" nil t)
@@ -38,6 +39,7 @@ it's loaded for files matching REGEXP."
 (require 'haml-mode)
 (require 'sass-mode)
 (require 'ruby-mode)
+(require 'rspec-mode)
 (require 'yasnippet)
 
 (yas/initialize)

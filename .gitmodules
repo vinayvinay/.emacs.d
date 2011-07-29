@@ -19,3 +19,6 @@
 [submodule "yasnippets-jquery"]
 	path = yasnippets/yasnippets-jquery
 	url = git://github.com/jpablobr/yasnippets-jquery.git
+[submodule "rspec-mode"]
+	path = vendor/rspec-mode
+	url = git://github.com/pezra/rspec-mode.git
