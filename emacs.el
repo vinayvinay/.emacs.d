@@ -11,8 +11,11 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/haml-mode")
 (add-to-list 'load-path "~/.emacs.d/vendor/sass-mode")
 (add-to-list 'load-path "~/.emacs.d/vendor/cucumber.el")
+(add-to-list 'load-path "~/.emacs.d/vendor/magit")
+(add-to-list 'load-path "~/.emacs.d/vendor/yasnippet-0.6.1c")
 
 (autoload 'js2-mode "js2" nil t)
+(autoload 'magit-status "magit" nil t)
 
 (defun load-mode (name regexp)
   "Set up a language mode NAME-mode so that
@@ -29,9 +32,15 @@ it's loaded for files matching REGEXP."
 (load-mode 'feature "\.feature$")
 
 (require 'rinari)
+(require 'magit)
+
 (require 'feature-mode)
 (require 'haml-mode)
 (require 'sass-mode)
 (require 'ruby-mode)
+(require 'yasnippet)
+
+(yas/initialize)
+(yas/load-directory "~/.emacs.d/vendor/yasnippet-0.6.1c/snippets")
 
 (setq rinari-tags-file-name "TAGS")
