@@ -6,6 +6,7 @@
 (ido-mode t)
      
 (add-to-list 'load-path "/usr/share/emacs/site-lisp")
+(add-to-list 'load-path "~/.emacs.d/elisp")
 (add-to-list 'load-path "~/.emacs.d/vendor/rinari")
 (add-to-list 'load-path "~/.emacs.d/vendor/emacs-js2-mode")
 (add-to-list 'load-path "~/.emacs.d/vendor/haml-mode")
@@ -26,6 +27,7 @@ it's loaded for files matching REGEXP."
 (load-mode 'js2 "\\.js$")
 (load-mode 'haml "\\.haml$")
 (load-mode 'sass "\\.sass$")
+(load-mode 'sass "\\.scss$")
 ;;(load-mode 'rhtml "\\.\\(rhtml\\|erb\\)$")
 ;;(load-mode 'yaml "\\.ya?ml$")
 (load-mode 'ruby "\\(\\.\\(rb\\|rake\\|rjs\\|duby\\|gemspec\\|thor\\)\\|Rakefile\\|Capfile\\|Thorfile\\)$")
@@ -50,3 +52,26 @@ it's loaded for files matching REGEXP."
 (setq rspec-spec-command "rspec")
 (setq rinari-tags-file-name "TAGS")
 
+(defvar hexcolour-keywords
+  '(("#[abcdef[:digit:]]\\{6\\}"
+     (0 (put-text-property (match-beginning 0)
+                           (match-end 0)
+                           'face (list :background 
+                                       (match-string-no-properties 0)))))))
+
+(defun hexcolour-add-to-font-lock ()
+  (font-lock-add-keywords nil hexcolour-keywords))
+
+(add-hook 'sass-mode-hook 'hexcolour-add-to-font-lock)
+
+;; no tabs by default. modes that really need tabs should enable
+;; indent-tabs-mode explicitly. makefile-mode already does that, for
+;; example.
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+;;(setq indent-line-function 'insert-tab)
+
+;; if indent-tabs-mode is off, untabify before saving
+(add-hook 'write-file-hooks 
+          (lambda () (if (not indent-tabs-mode)
+                         (untabify (point-min) (point-max)))))
