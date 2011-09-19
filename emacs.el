@@ -5,7 +5,6 @@
 (require 'ido)
 (ido-mode t)
      
-(add-to-list 'load-path "/usr/share/emacs/site-lisp")
 (add-to-list 'load-path "~/.emacs.d/elisp")
 (add-to-list 'load-path "~/.emacs.d/vendor/rinari")
 (add-to-list 'load-path "~/.emacs.d/vendor/emacs-js2-mode")
@@ -14,6 +13,7 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/cucumber.el")
 (add-to-list 'load-path "~/.emacs.d/vendor/magit")
 (add-to-list 'load-path "~/.emacs.d/vendor/yasnippet-0.6.1c")
+(add-to-list 'load-path "~/.emacs.d/vendor/ruby-mode")
 (add-to-list 'load-path "~/.emacs.d/vendor/rspec-mode")
 
 (autoload 'js2-mode "js2" nil t)
@@ -37,12 +37,12 @@ it's loaded for files matching REGEXP."
 (require 'rinari)
 (require 'magit)
 
-(require 'feature-mode)
 (require 'haml-mode)
 (require 'sass-mode)
 (require 'ruby-mode)
 (require 'rspec-mode)
 (require 'yasnippet)
+(require 'feature-mode)
 
 (yas/initialize)
 (yas/load-directory "~/.emacs.d/vendor/yasnippet-0.6.1c/snippets")
